@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoices Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,
+        <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23007bff%22/><text x=%2250%22 y=%2255%22 font-size=%2245%22 fill=%22%23fff%22 text-anchor=%22middle%22 alignment-baseline=%22middle%22>F</text></svg>"
+    />
+
+    <link rel="stylesheet" href="styles/global.min.css" />
+    <link rel="stylesheet" href="styles/sidebar.min.css" />
+    <link rel="stylesheet" href="styles/main.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- sidebar -->
+
+      <aside class="sidebar">
+        <img
+          class="arrow"
+          src="images/icons/arrow-circle-left.png"
+          alt="Arrow Circle Left"
+        />
+        <div class="sidebar-header">
+          <img src="images/logo.png" alt="Logo" />
+          <img class="logo-img" src="images/micromarin.png" alt="Micromarin" />
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#"
+                ><img src="images/icons/dashboard.png" alt="Dashboard" />
+                <span class="sidebar-text">Dashboard</span></a
+              >
+            </li>
+            <div class="sidebar-nav-title">SALES</div>
+            <li>
+              <a href="#"
+                ><img src="images/icons/invoices.png" alt="Invoices" />
+                <span class="sidebar-text">Invoices</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icons/incomes.png" alt="Incomes" />
+                <span class="sidebar-text">Incomes</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icons/customers.png" alt="Customers" />
+                <span class="sidebar-text">Customers</span>
+              </a>
+            </li>
+            <div class="sidebar-nav-title">PURCHASE</div>
+            <li>
+              <a href="#"
+                ><img src="images/icons/bills.png" alt="Bills" />
+                <span class="sidebar-text">Bills</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icons/expenses.png" alt="Expenses" />
+                <span class="sidebar-text">Expenses</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icons/vendors.png" alt="Vendors" />
+                <span class="sidebar-text">Vendors</span></a
+              >
+            </li>
+            <div class="sidebar-nav-title">CASH</div>
+            <li>
+              <a href="#"
+                ><img src="images/icons/cash.png" alt="Cash & Banks" />
+                <span class="sidebar-text">Cash & Banks</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icons/flow.png" alt="Cash Flow" />
+                <span class="sidebar-text">Cash Flow</span></a
+              >
+            </li>
+            <div class="sidebar-nav-title">STOCK</div>
+            <li>
+              <a href="#"
+                ><img
+                  src="images/icons/products.png"
+                  alt="Products & Services"
+                />
+                <span class="sidebar-text">Products & Services</span></a
+              >
+            </li>
+            <div class="sidebar-nav-title">ACOUNTING</div>
+            <li>
+              <a href="#"
+                ><img src="images/icons/transactions.png" alt="Transactions" />
+                <span class="sidebar-text">Transactions</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icons/chart.png" alt="Chart of Accounts" />
+                <span class="sidebar-text">Chart of Accounts</span></a
+              >
+            </li>
+            <div class="sidebar-nav-title">REPORTS</div>
+            <li>
+              <a href="#"
+                ><img src="images/icons/reports.png" alt="All Reports" /><span
+                  class="sidebar-text"
+                  >All Reports</span
+                ></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- main -->
+
+      <main class="main-content">
+        <!-- header -->
+
+        <header class="main-header">
+          <button class="menu-btn">
+            <img src="images/icons/wanchain.png" alt="wanchain" /><span
+              >Finance</span
+            >
+          </button>
+          <div class="user-info">
+            <div class="icons-menu">
+              <img src="images/icons/hamburger.png" alt="hamburger" />
+              <span class="icon-border"></span>
+
+              <img src="images/icons/message.png" alt="message" />
+
+              <span class="notification-box"
+                ><img
+                  src="images/icons/notification.png"
+                  alt="notification"
+                /><span class="notification">3</span>
+              </span>
+              <span class="icon-border"></span>
+            </div>
+            <div class="user">
+              <span class="user-name-initial">ÖU</span>
+              <div class="user-name-box">
+                <span class="user-name">Ömer Uçak</span>
+                <span class="user-company">Micromarin Yazılım A.Ş.</span>
+              </div>
+
+              <img
+                class="user-img"
+                src="images/icons/arrow-down.png"
+                alt="arrow-down"
+              />
+            </div>
+          </div>
+        </header>
+
+        <!-- invoices -->
+
+        <section class="invoices-section">
+          <!-- invoices header -->
+          <div>
+            <div class="invoices-header">
+              <div class="invoices-title">
+                <img
+                  src="images/icons/vuesax_linear_receipt-search.png"
+                  alt="vuesax"
+                />
+                <div>
+                  <h1>Invoices</h1>
+                  <span>120+ Items, sorted by Vessel</span>
+                </div>
+              </div>
+              <div class="invoices-header-btn">
+                <button class="create-invoice">
+                  <img src="images/icons/add.png" alt="add" /><span
+                    >Create Invoice</span
+                  >
+                </button>
+                <button class="more">
+                  <img src="images/icons/more.png" alt="more" />
+                </button>
+              </div>
+            </div>
+
+            <!-- invoices tab -->
+            <div class="section-main">
+              <ul class="tabs">
+                <li class="tab">All Invoices</li>
+                <li class="tab active">Overdue</li>
+                <li class="tab">In Progress</li>
+                <li class="tab">Waiting</li>
+                <li class="more-tab">
+                  <img src="images/icons/more down.png" alt="more down" />
+                </li>
+              </ul>
+
+              <!-- invoices filter -->
+
+              <div class="invoices-filter">
+                <div class="filter-tab">
+                  <div class="filter-btn">
+                    <img src="images/icons/filter.png" alt="filter" /><span
+                      >filter</span
+                    ><span class="filter-notification">1</span>
+                  </div>
+                  <div class="filter-btn active">
+                    <span>MT Vessel Name</span
+                    ><img
+                      src="images/icons/arrow-down-12px-white.png"
+                      class="arrow-icon"
+                      alt="arrow-down"
+                    />
+                  </div>
+                  <div class="filter-btn">
+                    <span>Status</span
+                    ><img
+                      src="images/icons/arrow-down-12px.png"
+                      class="arrow-icon"
+                      alt="arrow-down"
+                    />
+                  </div>
+                  <div class="filter-btn">
+                    <span>Priority</span
+                    ><img
+                      src="images/icons/arrow-down-12px.png"
+                      class="arrow-icon"
+                      alt="arrow-down"
+                    />
+                  </div>
+                  <div class="filter-btn">
+                    <span>Date</span
+                    ><img
+                      src="images/icons/arrow-down-12px.png"
+                      class="arrow-icon"
+                      alt="arrow-down"
+                    />
+                  </div>
+                </div>
+                <div class="filter-right-menu">
+                  <div class="search-container">
+                    <input type="text" placeholder="Search" id="searchInput" />
+                  </div>
+                  <div class="print">
+                    <img src="images/icons/printer.png" alt="printer" />
+                    <img src="images/icons/arrow-down-12px.png" alt="arrow" />
+                  </div>
+                </div>
+              </div>
+              <div class="table-container">
+                <table id="myTable" class="invoices-table">
+                  <thead>
+                    <tr>
+                      <th onclick="sortTable(0)">
+                        Details <img src="images/icons/sort.png" alt="sort" />
+                      </th>
+                      <th onclick="sortTable(1)">
+                        Date <img src="images/icons/sort.png" alt="sort" />
+                      </th>
+                      <th onclick="sortTable(2)">
+                        Status <img src="images/icons/sort.png" alt="sort" />
+                      </th>
+                      <th onclick="sortTable(3)">
+                        Amount <img src="images/icons/sort.png" alt="sort" />
+                      </th>
+                      <th id="empty-head"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="#" class="invoice-text">
+                        <div class="seperator-green"></div>
+                        <div>
+                          <span class="invoice-id">#SD-6598236</span>
+                          <span class="invoice-date"
+                            >Invoice Date : 12/02/2023</span
+                          >
+                        </div>
+                      </td>
+                      <td data-label="Date">
+                        <div class="paid">Paid</div>
+                        Due Date : 12/02/2023
+                      </td>
+                      <td data-label="Status">
+                        <div class="status approved">Approved</div>
+                      </td>
+                      <td data-label="Amount">
+                        TL 3.140,10
+                        <div class="outstanding">Outstanding : 0,00</div>
+                      </td>
+                      <td>
+                        <button class="table-more-button">
+                          <img src="images/icons/more-hor.png" alt="more" />
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="#" class="invoice-text">
+                        <div class="seperator-red"></div>
+                        <div>
+                          <span class="invoice-id">#SD-4345459</span>
+                          <span class="invoice-date"
+                            >Invoice Date : 12/03/2023</span
+                          >
+                        </div>
+                      </td>
+                      <td data-label="Date">
+                        <div class="paid-box">
+                          <div class="partially-paid">Partially Paid</div>
+                          <div class="pay-text">Overdue by 43 days</div>
+                        </div>
+                        Due Date : 12/03/2023
+                      </td>
+                      <td data-label="Status">
+                        <div class="status approved">Approved</div>
+                      </td>
+                      <td data-label="Amount">
+                        USD 8.100,00
+                        <div class="outstanding">Outstanding : USD 500,00</div>
+                      </td>
+                      <td>
+                        <button class="table-more-button">
+                          <img src="images/icons/more-hor.png" alt="more" />
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="#" class="invoice-text">
+                        <div class="seperator-yellow"></div>
+                        <div>
+                          <span class="invoice-id">#SD-6589534</span>
+                          <span class="invoice-date"
+                            >Invoice Date : 12/04/2023</span
+                          >
+                        </div>
+                      </td>
+                      <td data-label="Date">
+                        <div class="unpaid mb-10">Unpaid</div>
+                        Due Date : 12/04/2023
+                      </td>
+                      <td data-label="Status">
+                        <div class="status draft">Draft</div>
+                      </td>
+                      <td data-label="Amount">
+                        USD 10.250,00
+                        <div class="outstanding">
+                          Outstanding : USD 10.250,00
+                        </div>
+                      </td>
+                      <td>
+                        <button class="table-more-button">
+                          <img src="images/icons/more-hor.png" alt="more" />
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="#" class="invoice-text">
+                        <div class="seperator-red"></div>
+                        <div>
+                          <span class="invoice-id">#SD-4345459</span>
+                          <span class="invoice-date"
+                            >Invoice Date : 12/01/2023</span
+                          >
+                        </div>
+                      </td>
+                      <td data-label="Date">
+                        <div class="paid-box">
+                          <div class="unpaid">Unpaid</div>
+                          <div class="pay-text">Overdue by 3 days</div>
+                        </div>
+                        Due Date : 12/01/2023
+                      </td>
+                      <td data-label="Status">
+                        <div class="status rejected">Rejected</div>
+                      </td>
+                      <td data-label="Amount">
+                        EUR 2.540,00
+                        <div class="outstanding">
+                          Outstanding : EUR 2.540,00
+                        </div>
+                      </td>
+                      <td>
+                        <button class="table-more-button">
+                          <img src="images/icons/more-hor.png" alt="more" />
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="#" class="invoice-text">
+                        <div class="seperator-red"></div>
+                        <div>
+                          <span class="invoice-id">#SD-4345450</span>
+                          <span class="invoice-date"
+                            >Invoice Date : 12/01/2023</span
+                          >
+                        </div>
+                      </td>
+                      <td data-label="Date">
+                        <div class="paid-box">
+                          <div class="unpaid">Unpaid</div>
+                          <div class="pay-text">Overdue by 3 days</div>
+                        </div>
+                        Due Date : 12/01/2023
+                      </td>
+                      <td data-label="Status">
+                        <div class="status canceled">Canceled</div>
+                      </td>
+                      <td data-label="Amount">
+                        EUR 140,00
+                        <div class="outstanding">Outstanding : EUR 140,00</div>
+                      </td>
+                      <td>
+                        <button class="table-more-button">
+                          <img src="images/icons/more-hor.png" alt="more" />
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="page-box">
+            <div class="page-showing">Showing 1 - 50 of 1258 total results</div>
+            <div class="page-showing-mobile">1 - 50 of 1258</div>
+
+            <div class="pagination">
+              <a href="#" class="page-arrow right"
+                ><img src="images/icons/arrow-down-12px.png" alt="arrow-left" />
+              </a>
+              <a href="#" class="page">1</a>
+              <a href="#" class="page active">2</a>
+              <a href="#" class="page">3</a>
+              <a href="#" class="page">4</a>
+              <a href="#" class="page">5</a>
+              <span class="dots"
+                ><img src="images/icons/more-hor.png" alt="dots" />
+              </span>
+              <a href="#" class="page">14</a>
+              <a href="#" class="page-arrow left"
+                ><img src="images/icons/arrow-down-12px.png" alt="arrow-left"
+              /></a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="script.min.js"></script>
+  </body>
+</html>
